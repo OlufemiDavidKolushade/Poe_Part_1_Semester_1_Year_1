@@ -2,29 +2,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
-package TestLoginClasses;
+package TestClasses;
 
-import com.mycompany.poepart1.Login;
-import java.util.function.BooleanSupplier;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
 
 /**
  *
  * @author femik
  */
+import com.mycompany.poepart1.Login;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class LoginTest {
 
-    private LoginTest login;
-    private Login Login;
+    private Login login;
 
     @BeforeEach
     void setUp() {
-        Login = new Login();
+        login = new Login();
     }
 
     @Test
@@ -82,34 +79,4 @@ public class LoginTest {
         String status = login.returnLoginStatus(true);
         assertEquals("welcome John, Doe It is great to see you again", status);
     }
-
-    private BooleanSupplier checkUserName("ky_le") {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-
-    private BooleanSupplier checkPasswordComplexity(String chck1ng) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-
-    private BooleanSupplier checkCellNumber(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-
-    private void loginDetails(String ky_le, String chck1ng, String john, String doe, String string) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-
-    private Object registerUser() {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-
-    private BooleanSupplier LoginUser(String ky_le, String chck1ng) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-
-    private String returnLoginStatus(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
 }
-
-
