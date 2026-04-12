@@ -13,17 +13,20 @@ import java.util.Scanner;
 public class PoePart1 {
 //Main method
     public static void main(String[] args) {
+        
+        //From Scanner import
         Scanner Sc = new Scanner(System.in);
         Login auth = new Login();
         
         //Registration process where we input the username, password, cellnumber
         System.out.println("Registration process");//Prints out registration process
-        //Allows enter of the username using the import Scanner function\\
         
-        //Allows for user to enter Firstname
+        
+        //Allows enter of the username using the import Scanner function
         System.out.println("Enter Firstname");
         String Firstname = Sc.nextLine();
         
+        //Allows enter for the Lastname using the import scanner function
         System.out.println("Enter Lastname");
         String Lastname = Sc.nextLine();
         

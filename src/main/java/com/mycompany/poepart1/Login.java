@@ -11,30 +11,26 @@ import java.util.regex.Pattern;
  * @author femik
  */
 public class Login {
-    //Calls to public method by making it a private class
+    
+    //Calls to public method by making it a private class and stores the data 
     private String userName;
-    private String passWord;
     private String firstName;
     private String lastName;
+    private String passWord;
     private String cellNumber;
     
-    //Inputs user details after the rgistration process
+    //it acts like a setup tool, I declared  5 parameters and assigned them to the private files using this as the keyword
     public void loginDetails(String userName, String passWord, String firstName, String lastName, String cellNumber ){
-        
-        //Storage container for the username
+
         this.userName = userName; 
-        
-        //Storage container for the password
+
         this.passWord = passWord; 
-        
-        //Storage container for the firstname
+
         this.firstName = firstName; 
         
-        //Storage Container for thelastname
-        this.lastName = lastName; 
-        
-        //Storage container forCellnumber
         this.cellNumber = cellNumber;
+        
+        this.lastName = lastName; 
     }
     
        //checks if username contains: "_" and <=5
@@ -51,8 +47,8 @@ public class Login {
     } 
     
     
-    //checks if the conditions are being met
-    public boolean checkPasswordComplexity(String password) {
+    //checks if password is no more than 8 characters long and contains a number as well as a special character
+        public boolean checkPasswordComplexity(String password) {
         if (password == null || password.length() < 8) return false;
 
         boolean hasUppercase = false;
@@ -66,6 +62,8 @@ public class Login {
         }
         return hasUppercase && hasDigitnumber && hasSpecial;
     }
+        
+        //registerUser checks if any condition fails and if it does it prints an error message otherwise if conditions are met it prints a confrimation message
     public String registerUser(){
         if(!checkUserName(userName)){
             return "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters";
@@ -78,11 +76,13 @@ public class Login {
         
         return "Username was successfully captured. \nPassword successfully captured. \nCell number successfully captured";
     }
-    
+     
+    //This compares if the username and password entered by the user is the same as the one that has been stored in the class and returns true if they match
     public boolean LoginUser(String enteredUsername, String enteredPassword){
         return enteredUsername.equals(userName) && enteredPassword.equals(passWord);
     }
     
+    //This prints out the final message for the user, if the users details match then it prints the welcome message else if the users details don't match it prints the error message
     public String returnLoginStatus(boolean loggedIn){
         if (loggedIn){
             return "welcome "+ this.firstName + ", "+ this.lastName + " It is great to see you again";
