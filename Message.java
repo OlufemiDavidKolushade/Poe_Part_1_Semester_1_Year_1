@@ -93,7 +93,7 @@ public class Message {
         }
     }
 
-    //
+    //JSON STORAGE SYSTEM
     public void storeMessage() {
         String jsonPayLoad = "{\n"
                 +" \"MessageID\":\"" + this.messageID
@@ -136,17 +136,21 @@ public class Message {
         return id;
     }
 
-
+//getter methods to retrieve private instance variables
     public String getMessageID()   { return messageID; }
     public String getRecipient()   { return recipient; }
     public String getMessage()     { return message; }
     public String getMessageHash() { return messageHash; }
     public String getSentStatus()  { return sentStatus; }
 
+
+    //method to completely clear records
     public static void resetAll() {
         numMessagesSent = 0;
         messageHistory.clear();
     }
+
+    //this is a summary of this specific message's attributes directly to the console window.
     public void printMessage() {
         System.out.println("\n---Message Details---");
         System.out.println("Message Id: " + messageID);
@@ -155,6 +159,6 @@ public class Message {
         System.out.println("Messages " + message);
     }
 
-    //JSON STORAGE SYSTEM
+    
 
 }
