@@ -14,37 +14,15 @@ public class Main {
         System.out.println("Enter Lastname");
         String Lastname = Sc.nextLine();
 
-        //System.out.println("Enter Username: ");
-        //String Username = Sc.nextLine();
+        System.out.println("Enter Username: ");
+        String Username = Sc.nextLine();
 
-        String Username;
-        do{
-            System.out.println("Enter username");
-            Username = Sc.nextLine();
-        }while(!(Username.contains("_") && Username.length() <=5));
-
-        //System.out.println("Enter CellNumber(+27): ");
-        //String CellNumber = Sc.nextLine();
-        String CellNumber;
-
-        do{
-            System.out.println("Enter CellNumber(+27): ");
-            CellNumber = Sc.nextLine();
-        }
-        while(!(CellNumber.startsWith("+27") && CellNumber.length() ==12));
+        System.out.println("Enter CellNumber(+27): ");
+        String CellNumber = Sc.nextLine();
 
 
-        //System.out.println("Enter Password: ");
-        //String Password = Sc.nextLine();
-
-
-        String Password;
-        do{
-            System.out.println("Enter Password (8 characters and an uppercase and a number): ");
-            Password = Sc.nextLine();
-        }
-        while(auth.checkPasswordComplexity(""));
-
+        System.out.println("Enter Password: ");
+        String Password = Sc.nextLine();
 
 
         auth.loginDetails(Username, Firstname, Lastname, Password, CellNumber);
@@ -100,6 +78,7 @@ public class Main {
             int finalSent = 0;
             int choice = 0;
 
+            Message msg = null;
             while (choice != 3) {
                 System.out.println("\nMenu");
                 System.out.println("1) Send messages");
@@ -127,13 +106,13 @@ public class Main {
                             } while (!(recipient.startsWith("+27") && recipient.length() == 12));
 
 
-                            String  text;
+                            String text;
                             System.out.println("Enter your Quickchat (must be 250 characters or less): ");
-                            do{
+                            do {
                                 text = Sc.nextLine();
-                            }while (text.length() > 250);
+                            } while (text.length() > 250);
 
-                            Message msg = new Message(recipient, text, i);
+                            msg = new Message(recipient, text, i);
 
                             System.out.println("====================================");
                             System.out.println("\n ---Captured Message Info---");
@@ -163,23 +142,25 @@ public class Main {
                             }
                         }
 
-                        case 2:
-                            System.out.println("Coming soon!");
-                            break;
+                    case 2:
+                        System.out.println("Coming soon!");
+                        break;
 
-                        case 3:
+                    case 3:
 
-                            System.out.println("Goodbye");
-                            break;
+                        System.out.println("Goodbye");
+                        break;
 
-                        default:
-                            System.out.println("Invaild option");
-                            break;
-                    }
+                    default:
+                        System.out.println("Invaild option");
+                        break;
                 }
-                System.out.println("Total messages sent: " + finalSent +"\n");
-
             }
+            System.out.println("Total messages sent: " + finalSent + "\n");
+
+            msg.printMessage();
+
+        }
 
         }
     }
