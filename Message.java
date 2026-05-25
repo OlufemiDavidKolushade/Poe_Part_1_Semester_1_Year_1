@@ -15,7 +15,7 @@ public class Message {
     private String sentStatus;
 
     private static int numMessagesSent = 0;
-    private static List<Message> messageHistory = new ArrayList<>(); //to store messages
+    private static List<Message> messageHistory = new ArrayList<>(); //to store messages in array lists
 
     //Constructor to initialize a new Message object.
     public Message(String recipient, String message, int i) {
@@ -112,7 +112,7 @@ public class Message {
     }
 
 
-
+    //returns the absolute count of successfully sent messages system-wide.
     public int returnTotalMessages() {
         return numMessagesSent;
     }
